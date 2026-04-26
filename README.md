@@ -3,6 +3,8 @@
 Welcome to my Academic Portfolio repository!  
 This project showcases my academic journey, research work, technical projects, and achievements.
 
+🔗 Live Site: https://rakesh6430.github.io/academic-portfolio/
+
 ---
 
 ## 👨‍💻 About Me
