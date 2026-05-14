@@ -1,24 +1,50 @@
-# Academic Portfolio - Rakesh Roshan Paul
+# 🎓 Academic Portfolio - Rakesh Roshan Paul
 
-This repository contains the source code for the academic portfolio of **Rakesh Roshan Paul**, a PhD Aspirant in Computer Science, AI/ML, and Cybersecurity Researcher.
+Welcome to my Academic Portfolio repository!  
+This project showcases my academic journey, research work, technical projects, and achievements.
 
-## 🚀 Overview
+🔗 **Live Site:** [https://rakesh6430.github.io/academic-portfolio/](https://rakesh6430.github.io/academic-portfolio/)
 
-The portfolio is a responsive, single-page web application showcasing:
-- **Research Experience:** Focused on Dark Image Enhancement, Bangla News Analysis, and Music Genre Classification.
-- **Publications:** Peer-reviewed papers in IEEE SIST, ICNLP, ICAEEE, and SSRN.
-- **Education:** B.Sc. in Computer Science & Engineering from AUST.
-- **Selected Projects:** Pattern Recognition, Soft Computing, and SQA testing projects.
-- **Professional Experience:** Work as a Software QA Engineer at Shikho Technologies.
-- **Achievements:** Awards and professional certifications.
+---
+
+## 👨‍💻 About Me
+Hi, I'm **Rakesh Roshan Paul** 👋  
+- 🎓 BSc in Computer Science & Engineering (AUST)  
+- 💼 Software QA Engineer at Shikho Technologies
+- 🧪 Passionate about Artificial Intelligence, Machine Learning & Cybersecurity
+- 🚀 Currently exploring **Playwright Automation**
+
+## 🔬 Research & Publications
+
+- 📌 **A Comprehensive Approach To Enhance Dark Image Implementing Image Processing Techniques** (IEEE SIST 2022)
+- 📌 **Performance Comparison of Different Machine Learning Classifiers in Categorizing Bangla News Articles** (ICNLP 2022)  
+- 📌 **Machine Learning and Deep Learning Techniques For Genre Classification of Bangla Music** (ICAEEE 2022)  
+- 📌 **Bangla News Popularity Prediction Using Machine Learning Techniques** (SSRN)  
+- 📌 **Reinforcement Learning Based Dark Image Enhancement Through Color Feature Balancing** (ICIVC – Accepted)
+
+## 💻 Key Projects
+
+### 🔹 Bangladeshi Bank Note Classification
+- Computer Vision + Machine Learning (Pattern Recognition)
+- Tools: Scikit-learn, SVM, Random Forest, Decision Trees
+
+### 🔹 Music Genre Classification
+- Deep Learning & Audio Processing
+- Tools: Librosa, Random Forest
+
+### 🔹 Performance Testing — BlazeDemo
+- Load testing and bottleneck analysis
+- Tools: JMeter
+
+### 🔹 SQA Manual & API Testing
+- API Testing on Restful Booker and Manual Testing on Gorillamove Grocery
+- Tools: Postman, Manual Testing
 
 ## 🛠️ Technologies Used
 
-- **HTML5:** Semantic structure.
-- **CSS3:** Custom styling with Flexbox and Grid (vanilla CSS).
-- **JavaScript:** Interactive navigation and UI enhancements.
-- **Font Awesome:** Iconography.
-- **Google Fonts:** Typography (Inter & Crimson Pro).
+- **Web Technologies:** HTML5, CSS3, JavaScript, Vanilla CSS  
+- **ML/DL & Tech Stack:** Python, TensorFlow, Keras, OpenCV, C, C++, Java, MySQL  
+- **Tools:** Git, VS Code, Google Colab, Playwright, JMeter, Postman  
 
 ## 📂 Project Structure
 
@@ -26,13 +52,17 @@ The portfolio is a responsive, single-page web application showcasing:
 .
 ├── index.html          # Main HTML document
 ├── style.css           # Custom styles
-├── script.js          # Interactive features
+├── script.js           # Interactive features
 └── Index_Image.jpg     # Profile image
 ```
 
-## 🌐 Live Preview
+## 🚀 How to Use
 
-You can view the live portfolio by opening `index.html` in any modern web browser.
+1. Clone the repository:
+```bash
+git clone https://github.com/Rakesh6430/academic-portfolio.git
+```
+2. Open `index.html` in any modern web browser to view the portfolio.
 
 ## 📧 Contact
 
