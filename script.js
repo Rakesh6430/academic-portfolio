@@ -43,6 +43,54 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 
+function getRelativeTimeFromDate(date) {
+  const now = new Date();
+  const diffMs = now - date;
+  if (diffMs < 0) {
+    return 'just now';
+  }
+
+  const diffSec = Math.floor(diffMs / 1000);
+  const diffMin = Math.floor(diffSec / 60);
+  const diffHrs = Math.floor(diffMin / 60);
+  const diffDays = Math.floor(diffHrs / 24);
+
+  if (diffSec < 60) return 'just now';
+  if (diffMin < 60) return `${diffMin}m ago`;
+  if (diffHrs < 24) return `${diffHrs}h ago`;
+  if (diffDays < 7) return `${diffDays}d ago`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`;
+  if (diffDays < 365) return `${Math.floor(diffDays / 30)}mo ago`;
+  return `${Math.floor(diffDays / 365)}y ago`;
+}
+
+function updateRelativePostDates() {
+  document.querySelectorAll('time.post-date').forEach(timeElement => {
+    const dateValue = timeElement.dataset.postedDate || timeElement.getAttribute('datetime');
+    const postedDate = new Date(dateValue);
+    if (Number.isNaN(postedDate.getTime())) {
+      return;
+    }
+
+    const formattedDate = postedDate.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    timeElement.textContent = formattedDate;
+    timeElement.title = formattedDate;
+
+    const card = timeElement.closest('.linkedin-post-card');
+    const postTime = card ? card.querySelector('.post-time') : null;
+    if (postTime) {
+      postTime.textContent = getRelativeTimeFromDate(postedDate);
+    }
+  });
+}
+
+updateRelativePostDates();
+
 // Scroll-in animation
 const observerOptions = {
   threshold: 0.1,
