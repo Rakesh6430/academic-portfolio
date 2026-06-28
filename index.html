@@ -6,11 +6,19 @@
   <title>Rakesh Roshan Paul | PhD Aspirant</title>
   <meta name="description" content="Rakesh Roshan Paul - PhD Aspirant in Computer Science, AI/ML & Cybersecurity Researcher with 4 peer-reviewed publications.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#about" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
@@ -30,14 +38,24 @@
         <li><a href="#linkedin-posts">LinkedIn</a></li>
         <li><a href="https://drive.google.com/file/d/1XDQaNxkgrqqcXdyAS4FnB8fcW5rMvjNX/view" target="_blank" class="nav-cv">CV</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
     <div class="hero-content">
       <div class="hero-text">
-        <p class="hero-greeting">Hello, I am</p>
+        <div class="availability-badge">
+          <span class="badge-dot"></span>
+          Open to PhD Positions
+        </div>
+        <p class="hero-greeting"><span class="greeting-dot"></span>Hello, I am</p>
         <h1>Rakesh Roshan Paul</h1>
         <p class="hero-tagline">PhD Aspirant in Computer Science</p>
         <p class="hero-subtitle">AI, Machine Learning &amp; Cybersecurity Researcher</p>
@@ -55,8 +73,12 @@
             <span class="stat-label">CGPA / 4.00</span>
           </div>
         </div>
+        <div class="hero-cta">
+          <a href="#research" class="btn-primary"><i class="fa-solid fa-flask"></i> Explore Research</a>
+          <a href="#publications" class="btn-outline"><i class="fa-solid fa-file-lines"></i> Publications</a>
+        </div>
         <div class="hero-links">
-          <a href="mailto:rakeshroshanpaul@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="mailto:rakeshroshanpaul@gmail.com" title="Copy email address" id="copyEmailBtn" class="copy-email-btn"><i class="fa-solid fa-envelope"></i></a>
           <a href="https://www.researchgate.net/profile/Rakesh-Paul-4" target="_blank" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
           <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
           <a href="https://www.linkedin.com/in/rakesh-roshan-paul-343939143/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -73,29 +95,152 @@
   <section id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          I am a Computer Science graduate from Ahsanullah University of Science and Technology (AUST) with a CGPA of 3.336/4.00 and four peer-reviewed research publications. My academic journey has been driven by a deep curiosity in <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, and <strong>Cybersecurity</strong>, which I have explored through both academic research and industry experience.
-        </p>
-        <p>
-          My published work spans image enhancement using reinforcement learning, Bangla news popularity prediction, machine learning-based music genre classification, and soft computing applications &mdash; presented at international IEEE conferences and published in IEEE Xplore and SSRN.
-        </p>
-        <p>
-          With a blend of academic rigor and industry insight from my role as a Software Quality Assurance Engineer, I am seeking to pursue a <strong>PhD in Computer Science</strong> to further explore intelligent systems and secure computing, aiming to contribute novel insights at the intersection of AI and digital security.
-        </p>
-        <div class="about-interests">
-          <h3>Research Interests</h3>
-          <div class="interest-tags">
-            <span>Machine Learning</span>
-            <span>Reinforcement Learning</span>
-            <span>Image Processing</span>
-            <span>Natural Language Processing</span>
-            <span>Cybersecurity</span>
-            <span>Computer Vision</span>
-            <span>Deep Learning</span>
+
+      <!-- Bio + Quick Facts -->
+      <div class="about-grid">
+
+        <div class="about-bio">
+          <p>
+            I am a <strong>Computer Science graduate from Ahsanullah University of Science and Technology (AUST)</strong> with a strong foundation in applied research and software engineering. Driven by a deep fascination with <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, and <strong>Cybersecurity</strong>, I have built my career at the intersection of rigorous academic inquiry and real-world problem solving — producing four peer-reviewed publications along the way.
+          </p>
+          <p>
+            My research portfolio — published at <strong>IEEE international conferences</strong> and indexed in <strong>IEEE Xplore</strong> and <strong>SSRN</strong> — spans reinforcement learning for low-light image enhancement, NLP-driven analysis of Bangla news corpora, deep learning for music genre classification, and soft computing applications. Each project reflects my commitment to building AI systems that are both technically sound and practically meaningful.
+          </p>
+          <p>
+            As a <strong>Software QA Engineer at Shikho</strong>, I translate research instincts into engineering discipline — architecting automated test frameworks with Playwright, validating complex REST and GraphQL APIs, and partnering with cross-functional teams to ship reliable software at scale. This dual lens — researcher and engineer — is what I bring to every problem I tackle.
+          </p>
+
+          <!-- PhD Goal Callout -->
+          <div class="about-phd-goal">
+            <div class="phd-goal-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="phd-goal-text">
+              <strong>PhD Research Vision</strong>
+              <p>I aim to advance the frontier of <em>trustworthy AI</em> and <em>cybersecurity</em> — investigating adversarial robustness, privacy-preserving machine learning, and secure intelligent systems in collaboration with world-class research labs.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Quick Facts Sidebar -->
+        <aside class="about-sidebar">
+          <div class="quick-facts">
+            <h3>Quick Facts</h3>
+            <ul class="facts-list">
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="fact-content">
+                  <span class="fact-label">Location</span>
+                  <span class="fact-value">Dhaka, Bangladesh</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="fact-content">
+                  <span class="fact-label">Degree</span>
+                  <span class="fact-value">BSc CSE &mdash; AUST</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-star"></i>
+                <div class="fact-content">
+                  <span class="fact-label">CGPA</span>
+                  <span class="fact-value">3.336 / 4.00</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-file-lines"></i>
+                <div class="fact-content">
+                  <span class="fact-label">Publications</span>
+                  <span class="fact-value">4 peer-reviewed papers</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-briefcase"></i>
+                <div class="fact-content">
+                  <span class="fact-label">Experience</span>
+                  <span class="fact-value">3+ yrs · QA Engineering</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-language"></i>
+                <div class="fact-content">
+                  <span class="fact-label">Languages</span>
+                  <span class="fact-value">English · Bengali</span>
+                </div>
+              </li>
+              <li class="fact-status-item">
+                <span class="fact-status-dot"></span>
+                <div class="fact-content">
+                  <span class="fact-label">Status</span>
+                  <span class="fact-value fact-open">Open to PhD Positions</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div><!-- /.about-grid -->
+
+      <!-- Technical Skills -->
+      <div class="about-skills">
+        <h3><i class="fa-solid fa-code"></i> Technical Skills</h3>
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <span class="skill-cat-label">AI &amp; Machine Learning</span>
+            <div class="skill-chips">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>PyTorch</span>
+              <span>Scikit-learn</span>
+              <span>Keras</span>
+              <span>OpenCV</span>
+              <span>Librosa</span>
+              <span>NLTK</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="skill-cat-label">Quality Assurance</span>
+            <div class="skill-chips">
+              <span>Playwright</span>
+              <span>JMeter</span>
+              <span>Postman</span>
+              <span>GraphQL Inspector</span>
+              <span>Page Object Model</span>
+              <span>Manual Testing</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="skill-cat-label">Tools &amp; Platforms</span>
+            <div class="skill-chips">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>ClickUp</span>
+              <span>Jira</span>
+              <span>Android Studio</span>
+              <span>VS Code</span>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /.about-skills -->
+
+      <!-- Research Interests -->
+      <div class="about-interests">
+        <h3><i class="fa-solid fa-microscope"></i> Research Interests</h3>
+        <div class="interest-tags">
+          <span><i class="fa-solid fa-brain"></i> Machine Learning</span>
+          <span><i class="fa-solid fa-rotate"></i> Reinforcement Learning</span>
+          <span><i class="fa-solid fa-image"></i> Image Processing</span>
+          <span><i class="fa-solid fa-comments"></i> Natural Language Processing</span>
+          <span><i class="fa-solid fa-shield-halved"></i> Cybersecurity</span>
+          <span><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+          <span><i class="fa-solid fa-robot"></i> Trustworthy AI</span>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -220,73 +365,87 @@
   <!-- LinkedIn Post Section -->
   <section id="linkedin-posts">
     <div class="container">
-      <h2 class="section-title">LinkedIn Posts</h2>
-      <div class="linkedin-grid">
-        <div class="linkedin-post-card">
-          <div class="post-header">
-            <div class="post-avatar"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div>
-              <p class="post-author">Rakesh Roshan Paul</p>
-              <p class="post-role">AI &amp; Cybersecurity Researcher | PhD Aspirant</p>
-            </div>
-          </div>
-          <div class="post-meta">
-            <span class="post-platform">LinkedIn</span>
-            <span>•</span>
-            <span class="post-time">1y ago</span>
-          </div>
-          <p class="post-text">
-            Today, I am honored to receive the Values Award from Shikho, recognizing my contributions to the organization. I would like to extend my heartfelt gratitude to my 
-          </p>
-          <p class="post-continue">To be continued...</p>
-          <div class="post-footer">
-            <time class="post-date" datetime="2025-06-06" data-posted-date="2025-06-06">June 6, 2025</time>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7293307805820727296/" target="_blank" class="button button-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> View on LinkedIn</a>
-          </div>
+
+      <div class="li-section-header">
+        <div>
+          <h2 class="section-title">LinkedIn Activity</h2>
+          <p class="li-section-subtitle">Sharing insights on AI, automation &amp; QA engineering</p>
         </div>
-        <div class="linkedin-post-card">
-          <div class="post-header">
-            <div class="post-avatar"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div>
-              <p class="post-author">Rakesh Roshan Paul</p>
-              <p class="post-role">AI &amp; Cybersecurity Researcher | PhD Aspirant</p>
-            </div>
-          </div>
-          <div class="post-meta">
-            <span class="post-platform">LinkedIn</span>
-            <span>•</span>
-            <span class="post-time">3w ago</span>
-          </div>
-          <p class="post-text">
-            🚀 New Project Alert: Automated E2E Testing with Playwright using AI Agent! I wanted to build a Playwright automation script for the Daraz login page.
-          </p>
-          <p class="post-continue">To be continued...</p>
-          <div class="post-footer">
-            <time class="post-date" datetime="2026-05-16" data-posted-date="2026-05-16">May 16, 2026</time>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7460528172665761793/" target="_blank" class="button button-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> View on LinkedIn</a>
-          </div>
-        </div>
-        <div class="linkedin-post-card">
-          <div class="post-header">
-            <div class="post-avatar"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div>
-              <p class="post-author">Rakesh Roshan Paul</p>
-              <p class="post-role">AI &amp; Cybersecurity Researcher | PhD Aspirant</p>
-            </div>
-          </div>          <div class="post-meta">
-            <span class="post-platform">LinkedIn</span>
-            <span>•</span>
-            <span class="post-time">10mo ago · Edited</span>
-          </div>          <p class="post-text">
-            🚀 Just wrapped up automating the Shikho CMS Authentication Flow (Login Flow and User Type Creation Flow) using Playwright! This one was a bit tricky — I had to 
-          </p>
-          <p class="post-continue">To be continued...</p>
-          <div class="post-footer">
-            <time class="post-date" datetime="2025-08-06" data-posted-date="2025-08-06">August 6, 2025</time>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7358169805738139648/" target="_blank" class="button button-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> View on LinkedIn</a>
-          </div>
-        </div>
+        <a href="https://www.linkedin.com/in/rakesh-roshan-paul-343939143/" target="_blank" class="li-follow-btn">
+          <i class="fa-brands fa-linkedin-in"></i> Follow on LinkedIn
+        </a>
       </div>
+
+      <div class="li-grid">
+
+        <!-- Post 1 — Award -->
+        <article class="li-card li-card--award">
+          <div class="li-card-top">
+            <span class="li-badge li-badge--award"><i class="fa-solid fa-trophy"></i> Award</span>
+            <time class="li-card-date" datetime="2025-06-06" data-posted-date="2025-06-06">June 6, 2025</time>
+          </div>
+          <div class="li-card-author">
+            <div class="li-avatar">RR</div>
+            <div class="li-author-info">
+              <p class="li-author-name">Rakesh Roshan Paul</p>
+              <p class="li-author-role">AI &amp; Cybersecurity Researcher · PhD Aspirant</p>
+            </div>
+            <i class="fa-brands fa-linkedin li-brand-icon"></i>
+          </div>
+          <p class="li-post-body">
+            Today, I am honored to receive the <strong>Values Award</strong> from Shikho, recognizing my contributions to the organization. I would like to extend my heartfelt gratitude to my team and managers for their continuous support and trust in me. This recognition means a great deal and motivates me to keep pushing boundaries in everything I do.
+          </p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7293307805820727296/" target="_blank" class="li-read-more">
+            Read full post <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- Post 2 — AI Project -->
+        <article class="li-card li-card--project">
+          <div class="li-card-top">
+            <span class="li-badge li-badge--project"><i class="fa-solid fa-rocket"></i> AI Project</span>
+            <time class="li-card-date" datetime="2026-05-16" data-posted-date="2026-05-16">May 16, 2026</time>
+          </div>
+          <div class="li-card-author">
+            <div class="li-avatar">RR</div>
+            <div class="li-author-info">
+              <p class="li-author-name">Rakesh Roshan Paul</p>
+              <p class="li-author-role">AI &amp; Cybersecurity Researcher · PhD Aspirant</p>
+            </div>
+            <i class="fa-brands fa-linkedin li-brand-icon"></i>
+          </div>
+          <p class="li-post-body">
+            🚀 <strong>New Project Alert: Automated E2E Testing with Playwright using AI Agent!</strong> I wanted to build a Playwright automation script for the Daraz login page. Leveraging Claude AI, I crafted the test script from scratch — and it worked flawlessly on the first run! A perfect blend of AI assistance and automation engineering.
+          </p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7460528172665761793/" target="_blank" class="li-read-more">
+            Read full post <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- Post 3 — Automation -->
+        <article class="li-card li-card--automation">
+          <div class="li-card-top">
+            <span class="li-badge li-badge--automation"><i class="fa-solid fa-gears"></i> Automation</span>
+            <time class="li-card-date" datetime="2025-08-06" data-posted-date="2025-08-06">August 6, 2025</time>
+          </div>
+          <div class="li-card-author">
+            <div class="li-avatar">RR</div>
+            <div class="li-author-info">
+              <p class="li-author-name">Rakesh Roshan Paul</p>
+              <p class="li-author-role">AI &amp; Cybersecurity Researcher · PhD Aspirant</p>
+            </div>
+            <i class="fa-brands fa-linkedin li-brand-icon"></i>
+          </div>
+          <p class="li-post-body">
+            🚀 Just wrapped up automating the <strong>Shikho CMS Authentication Flow</strong> using Playwright! This was tricky — handling dynamic elements, multi-step authentication, and edge cases across different user roles. Used the Page Object Model for clean, maintainable code. Automation reduced manual effort by 70%!
+          </p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7358169805738139648/" target="_blank" class="li-read-more">
+            Read full post <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+      </div><!-- /.li-grid -->
+
     </div>
   </section>
 
@@ -337,47 +496,47 @@
       <p class="section-subtitle">A few moments captured through my lens, blending technical precision with visual storytelling.</p>
       <div class="photo-grid">
         <div class="photo-card">
-          <img src="Images/Image 1.jpg" alt="Photography image 1">
+          <img src="Images/Image 1.jpg" alt="Photography image 1" loading="lazy">
           <div class="photo-caption">Tree-lined highway under soft morning light.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 2.jpg" alt="Photography image 2">
+          <img src="Images/Image 2.jpg" alt="Photography image 2" loading="lazy">
           <div class="photo-caption">Ferry lights cutting through the night sky.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 3.jpg" alt="Photography image 3">
+          <img src="Images/Image 3.jpg" alt="Photography image 3" loading="lazy">
           <div class="photo-caption">Sunlit lawn with modern architecture in the background.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 4.jpg" alt="Photography image 4">
+          <img src="Images/Image 4.jpg" alt="Photography image 4" loading="lazy">
           <div class="photo-caption">Rainy day view from inside a car, capturing the city edge.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 5.jpg" alt="Photography image 5">
+          <img src="Images/Image 5.jpg" alt="Photography image 5" loading="lazy">
           <div class="photo-caption">A majestic tree standing alone in a green field.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 6.jpg" alt="Photography image 6">
+          <img src="Images/Image 6.jpg" alt="Photography image 6" loading="lazy">
           <div class="photo-caption">Ferry dock at sunset with vehicles waiting to board.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 7.jpg" alt="Photography image 7">
+          <img src="Images/Image 7.jpg" alt="Photography image 7" loading="lazy">
           <div class="photo-caption">A serene campus view with warm late-afternoon light.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 8.jpg" alt="Photography image 8">
+          <img src="Images/Image 8.jpg" alt="Photography image 8" loading="lazy">
           <div class="photo-caption">Ferry pier under a wide blue sky.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 9.jpg" alt="Photography image 9">
+          <img src="Images/Image 9.jpg" alt="Photography image 9" loading="lazy">
           <div class="photo-caption">A bright campus building illuminated in early evening.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 10.jpg" alt="Photography image 10">
+          <img src="Images/Image 10.jpg" alt="Photography image 10" loading="lazy">
           <div class="photo-caption">Calm ferry scene with vehicles lined up on deck.</div>
         </div>
         <div class="photo-card">
-          <img src="Images/Image 11.jpg" alt="Photography image 11">
+          <img src="Images/Image 11.jpg" alt="Photography image 11" loading="lazy">
           <div class="photo-caption">Architectural detail and campus greenery in soft light.</div>
         </div>
       </div>
@@ -569,6 +728,23 @@
       <p class="footer-copy">&copy; 2025 Rakesh Roshan Paul. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Photo Lightbox -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+      <p class="lightbox-counter" id="lightboxCounter"></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
