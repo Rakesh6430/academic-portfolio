@@ -57,7 +57,7 @@
         </div>
         <p class="hero-greeting"><span class="greeting-dot"></span>Hello, I am</p>
         <h1>Rakesh Roshan Paul</h1>
-        <p class="hero-tagline">PhD Aspirant in Computer Science</p>
+        <p class="hero-tagline"><span id="typewriter-text">PhD Aspirant in Computer Science</span><span class="typewriter-cursor" aria-hidden="true"></span></p>
         <p class="hero-subtitle">AI, Machine Learning &amp; Cybersecurity Researcher</p>
         <div class="hero-stats">
           <div class="stat">
@@ -287,9 +287,16 @@
   <section id="publications">
     <div class="container">
       <h2 class="section-title">Publications</h2>
+      <div class="pub-filters" role="group" aria-label="Filter publications">
+        <button class="pub-filter-btn active" data-filter="all">All <span class="pub-filter-count">5</span></button>
+        <button class="pub-filter-btn" data-filter="ieee">IEEE <span class="pub-filter-count">3</span></button>
+        <button class="pub-filter-btn" data-filter="ssrn">SSRN <span class="pub-filter-count">1</span></button>
+        <button class="pub-filter-btn" data-filter="accepted">Accepted <span class="pub-filter-count">1</span></button>
+      </div>
+
       <div class="pub-list">
 
-        <div class="pub-item">
+        <div class="pub-item" data-pub-type="ieee">
           <div class="pub-year">2022</div>
           <div class="pub-content">
             <div class="pub-venue"><i class="fa-solid fa-bookmark"></i> IEEE SIST 2022</div>
@@ -303,7 +310,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" data-pub-type="ieee">
           <div class="pub-year">2022</div>
           <div class="pub-content">
             <div class="pub-venue"><i class="fa-solid fa-bookmark"></i> IEEE ICNLP 2022</div>
@@ -317,7 +324,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" data-pub-type="ieee">
           <div class="pub-year">2022</div>
           <div class="pub-content">
             <div class="pub-venue"><i class="fa-solid fa-bookmark"></i> IEEE ICAEEE 2022</div>
@@ -331,7 +338,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div class="pub-item" data-pub-type="ssrn">
           <div class="pub-year">2022</div>
           <div class="pub-content">
             <div class="pub-venue"><i class="fa-solid fa-bookmark"></i> SSRN</div>
@@ -345,7 +352,7 @@
           </div>
         </div>
 
-        <div class="pub-item pub-accepted">
+        <div class="pub-item pub-accepted" data-pub-type="accepted">
           <div class="pub-year">2022</div>
           <div class="pub-content">
             <div class="pub-venue"><i class="fa-solid fa-bookmark"></i> ICIVC 2022 <span class="pub-badge">Accepted</span></div>
@@ -494,7 +501,9 @@
     <div class="container">
       <h2 class="section-title">Personal Photography</h2>
       <p class="section-subtitle">A few moments captured through my lens, blending technical precision with visual storytelling.</p>
-      <div class="photo-grid">
+      <div class="carousel-wrapper" data-carousel="photos">
+        <button class="carousel-arrow carousel-arrow--prev" aria-label="Scroll photos left"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="photo-grid">
         <div class="photo-card">
           <img src="Images/Image 1.jpg" alt="Photography image 1" loading="lazy">
           <div class="photo-caption">Tree-lined highway under soft morning light.</div>
@@ -539,6 +548,8 @@
           <img src="Images/Image 11.jpg" alt="Photography image 11" loading="lazy">
           <div class="photo-caption">Architectural detail and campus greenery in soft light.</div>
         </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow--next" aria-label="Scroll photos right"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -548,7 +559,9 @@
     <div class="container">
       <h2 class="section-title">Selected Projects</h2>
       <p class="section-subtitle">Research-oriented and technically significant projects</p>
-      <div class="projects-grid">
+      <div class="carousel-wrapper" data-carousel="projects">
+        <button class="carousel-arrow carousel-arrow--prev" aria-label="Scroll projects left"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="projects-grid">
 
         <div class="project-card">
           <div class="project-header">
@@ -620,6 +633,8 @@
           </div>
         </div>
 
+        </div>
+        <button class="carousel-arrow carousel-arrow--next" aria-label="Scroll projects right"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -745,6 +760,20 @@
       <p class="lightbox-counter" id="lightboxCounter"></p>
     </div>
   </div>
+
+  <!-- Section Navigation Dots -->
+  <nav class="section-dots-nav" aria-label="Page sections">
+    <a href="#hero"           class="sdot" data-section="hero"           title="Home"><span></span></a>
+    <a href="#about"          class="sdot" data-section="about"          title="About"><span></span></a>
+    <a href="#research"       class="sdot" data-section="research"       title="Research"><span></span></a>
+    <a href="#publications"   class="sdot" data-section="publications"   title="Publications"><span></span></a>
+    <a href="#education"      class="sdot" data-section="education"      title="Education"><span></span></a>
+    <a href="#projects"       class="sdot" data-section="projects"       title="Projects"><span></span></a>
+    <a href="#experience"     class="sdot" data-section="experience"     title="Experience"><span></span></a>
+    <a href="#photography"    class="sdot" data-section="photography"    title="Photography"><span></span></a>
+    <a href="#achievements"   class="sdot" data-section="achievements"   title="Achievements"><span></span></a>
+    <a href="#linkedin-posts" class="sdot" data-section="linkedin-posts" title="LinkedIn"><span></span></a>
+  </nav>
 
   <script src="script.js"></script>
 </body>

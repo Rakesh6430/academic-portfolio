@@ -398,3 +398,113 @@ function updateScrollPadding() {
 }
 updateScrollPadding();
 window.addEventListener('resize', updateScrollPadding, { passive: true });
+
+// ===== Typewriter Effect =====
+(function initTypewriter() {
+  const el = document.getElementById('typewriter-text');
+  if (!el) return;
+
+  const texts = [
+    'PhD Aspirant in Computer Science',
+    'AI & Machine Learning Researcher',
+    'QA Automation Engineer',
+    '4× Peer-Reviewed Author'
+  ];
+
+  let textIndex = 0;
+  let charIndex = texts[0].length;
+  let isDeleting = false;
+
+  function tick() {
+    const current = texts[textIndex];
+    if (!isDeleting) {
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        isDeleting = true;
+        setTimeout(tick, 2400);
+        return;
+      }
+      setTimeout(tick, 68);
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(tick, 300);
+        return;
+      }
+      setTimeout(tick, 36);
+    }
+  }
+
+  setTimeout(tick, 1800);
+})();
+
+// ===== Publication Filter =====
+(function initPubFilter() {
+  const filterBtns = document.querySelectorAll('.pub-filter-btn');
+  const pubItems   = document.querySelectorAll('.pub-item');
+  if (!filterBtns.length || !pubItems.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      pubItems.forEach(item => {
+        const type = item.dataset.pubType || 'ieee';
+        item.classList.toggle('pub-hidden', filter !== 'all' && type !== filter);
+      });
+    });
+  });
+})();
+
+// ===== Carousel Arrows =====
+(function initCarousels() {
+  document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+    const track   = wrapper.querySelector('.projects-grid, .photo-grid');
+    const prevBtn = wrapper.querySelector('.carousel-arrow--prev');
+    const nextBtn = wrapper.querySelector('.carousel-arrow--next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const scrollAmt = () => Math.max(track.clientWidth * 0.75, 240);
+
+    function updateArrows() {
+      prevBtn.classList.toggle('disabled', track.scrollLeft <= 4);
+      nextBtn.classList.toggle('disabled',
+        track.scrollLeft + track.clientWidth >= track.scrollWidth - 4);
+    }
+
+    prevBtn.addEventListener('click', () =>
+      track.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () =>
+      track.scrollBy({ left:  scrollAmt(), behavior: 'smooth' }));
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    updateArrows();
+  });
+})();
+
+// ===== Section Navigation Dots =====
+(function initSectionDots() {
+  const dots = document.querySelectorAll('.sdot');
+  if (!dots.length) return;
+
+  function updateDots() {
+    const mid = window.scrollY + window.innerHeight / 2;
+    sections.forEach(section => {
+      const id  = section.getAttribute('id');
+      const dot = document.querySelector(`.sdot[data-section="${id}"]`);
+      if (dot) {
+        dot.classList.toggle('active',
+          mid >= section.offsetTop && mid < section.offsetTop + section.offsetHeight);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateDots, { passive: true });
+  updateDots();
+})();
